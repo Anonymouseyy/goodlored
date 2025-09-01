@@ -1,0 +1,22 @@
+const props = [
+    "a talking animal",
+    "a secret society",
+    "a hidden treasure map",
+    "a time-traveling tourist",
+    "a magical sword",
+    "an ancient prophecy",
+    "a haunted house",
+    "a mysterious stranger",
+    "an impossible choice",
+    "a forgotten memory",
+    "a powerful artifact",
+    "a city in the clouds",
+    "a deal with a demon",
+    "a message in a bottle",
+    "a royal conspiracy",
+    "a cursed object",
+    "a journey to the underworld",
+    "a betrayal by a close friend",
+    "a scientific discovery gone wrong",
+    "a pact with a dragon"
+];

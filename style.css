@@ -1,53 +1,66 @@
 body {
     font-family: sans-serif;
     background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 #app {
-    width: 100%;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-#room-creation {
+#room-creation, #lobby {
     text-align: center;
 }
 
-#room-id-display {
-    margin-top: 10px;
+.room-id-display {
+    font-size: 1.5em;
     font-weight: bold;
-    background-color: #eee;
+    color: #007bff;
+    margin: 10px 0;
     padding: 10px;
-    border-radius: 4px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+#lobby-player-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#lobby-player-list li {
+    font-size: 1.2em;
+    margin-bottom: 5px;
 }
 
 input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 10px;
     border-radius: 4px;
-    width: 60%;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 1em;
 }
 
 button {
-    padding: 8px 16px;
+    padding: 10px 15px;
     border: none;
-    background-color: #007bff;
-    color: white;
     border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
     cursor: pointer;
-    margin-left: 10px;
 }
 
-#game-area {
-    /* Styles for the game area will be added later */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+hr {
+    margin: 20px 0;
 }

@@ -10,12 +10,21 @@
     <div id="app">
         <div id="room-creation">
             <h1>Lore Lord</h1>
-            <p>Create a room and share the ID with your friends, or join a friend's room using their ID.</p>
+            <p>Enter your name and then create a room or join a friend's room.</p>
+            <input type="text" id="player-name-input" placeholder="Enter Your Name">
             <button id="create-room-btn">Create Room</button>
-            <div id="room-id-display"></div>
             <hr>
             <input type="text" id="join-room-input" placeholder="Enter Room ID">
             <button id="join-room-btn">Join Room</button>
+        </div>
+
+        <div id="lobby" style="display: none;">
+            <h2>Lobby</h2>
+            <p>Share this Room ID with your friends:</p>
+            <div id="lobby-room-id" class="room-id-display"></div>
+            <h3>Connected Players:</h3>
+            <ul id="lobby-player-list"></ul>
+            <button id="start-game-btn">Start Game</button>
         </div>
 
         <div id="game-area" style="display: none;">
@@ -58,27 +67,39 @@
                 font-weight: bold;
                 margin-bottom: 10px;
             }
-            .story-text {
-                min-height: 50px;
-                padding: 10px;
-                border: 1px solid #eee;
+            .prop-card {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #eee;
+                padding: 5px 10px;
                 border-radius: 4px;
+                margin: 5px 0;
             }
-             .story-text[contenteditable="true"] {
-                background-color: #fff;
-                border: 1px solid #007bff;
+            .prop-card.revealed {
+                background-color: #d4edda;
+            }
+            .prop-card-text.hidden {
+                font-style: italic;
+                color: #666;
             }
         </style>
         <div class="player-hand-container">
             <div class="player-name"></div>
-            <div class="story-text" contenteditable="false"></div>
-            <button class="submit-story-btn" style="display: none;">Submit Story</button>
-            <button class="vote-btn" style="display: none;">Vote for this story</button>
+            <div class="prop-cards-container"></div>
+            <div class="story-status"></div>
+            <div class="truth-choice-buttons" style="display: none;">
+                <p>You have told your story. Was it true or fake?</p>
+                <button class="true-btn">True Story</button>
+                <button class="fake-btn">Fake Story</button>
+            </div>
+            <button class="best-story-btn" style="display: none;">Pick as Best Story</button>
         </div>
     </template>
 
     <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
     <script src="prompts.js"></script>
+    <script src="props.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
