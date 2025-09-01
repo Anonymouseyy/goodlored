@@ -1,14 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore Lord (Peer-to-Peer)</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div id="app">
+        <div id="room-creation">
+            <h1>Lore Lord</h1>
+            <p>Create a room and share the ID with your friends, or join a friend's room using their ID.</p>
+            <button id="create-room-btn">Create Room</button>
+            <div id="room-id-display"></div>
+            <hr>
+            <input type="text" id="join-room-input" placeholder="Enter Room ID">
+            <button id="join-room-btn">Join Room</button>
+        </div>
+
+        <div id="game-area" style="display: none;">
+            <h2>Game in Progress</h2>
+            <div id="scores"></div>
+            <prompt-card></prompt-card>
+            <div id="player-hands"></div>
+            <div id="lore-lord-controls"></div>
+        </div>
+    </div>
+
+    <template id="prompt-card-template">
+        <style>
+            .prompt-card-container {
+                padding: 20px;
+                border: 2px dashed #ccc;
+                border-radius: 8px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .prompt-text {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        </style>
+        <div class="prompt-card-container">
+            <p class="prompt-text">Waiting for the Lore Lord to choose a prompt...</p>
+        </div>
+    </template>
+
+    <template id="player-hand-template">
+        <style>
+            .player-hand-container {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .player-name {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .story-text {
+                min-height: 50px;
+                padding: 10px;
+                border: 1px solid #eee;
+                border-radius: 4px;
+            }
+             .story-text[contenteditable="true"] {
+                background-color: #fff;
+                border: 1px solid #007bff;
+            }
+        </style>
+        <div class="player-hand-container">
+            <div class="player-name"></div>
+            <div class="story-text" contenteditable="false"></div>
+            <button class="submit-story-btn" style="display: none;">Submit Story</button>
+            <button class="vote-btn" style="display: none;">Vote for this story</button>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="prompts.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
