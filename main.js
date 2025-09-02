@@ -99,8 +99,7 @@ class PlayerHand extends HTMLElement {
 
         if (storyStatus) {
             const truthText = storyStatus.isTrue ? 'This story was TRUE' : 'This story was FAKE';
-            const points = (storyStatus.isTrue ? 2 : 1) + Object.keys(revealedProps || {}).length;
-            this.storyStatusEl.textContent = `Story Told`;
+            this.storyStatusEl.textContent = `Story Told. ${truthText}`;
         } else {
             this.storyStatusEl.textContent = '';
         }
@@ -219,7 +218,7 @@ function handleHostAction(peerId, action) {
             const winnerId = payload.peerId;
             const story = gameState.storyStatus[winnerId];
             const revealedCount = Object.keys(gameState.revealedProps[winnerId]).length;
-            const score = (story.isTrue ? 2 : 1) + revealedCount;
+            const score = (story.isTrue ? 5 : 1) + revealedCount;
             gameState.scores[winnerId] += score;
             gameState.winner = winnerId;
             gameState.roundInProgress = false;
