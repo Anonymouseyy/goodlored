@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Lored — Official Rules</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1f2937;
+    --muted: #6b7280;
+    --card: #f9fafb;
+    --accent: #7c3aed;
+    --accent-2: #22c55e;
+    --border: #e5e7eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0f16;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --accent: #a78bfa;
+      --accent-2: #34d399;
+      --border: #1f2937;
+    }
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.55;
+  }
+  .container {
+    max-width: 880px;
+    margin: 40px auto;
+    padding: 24px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 0.95rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+  }
+  ul, ol { padding-left: 20px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  .btnrow { display:flex; gap:10px; flex-wrap: wrap; }
+  button, .btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover, .btn:hover { border-color: var(--accent); }
+  .callout {
+    border-left: 4px solid var(--accent-2);
+    padding: 12px 14px;
+    background: color-mix(in srgb, var(--accent-2) 8%, transparent);
+    border-radius: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+  th { background: color-mix(in srgb, var(--accent) 10%, var(--card)); color: var(--fg); }
+  code { background: color-mix(in srgb, var(--fg) 10%, transparent); padding: 2px 6px; border-radius: 6px; }
+  footer { margin-top: 28px; color: var(--muted); font-size: .9rem; }
+  .right { text-align: right; }
+  .small { font-size: 0.9rem; color: var(--muted); }
+  @media print {
+    header .btnrow, .no-print { display: none !important; }
+    .container { margin: 0; padding: 0; }
+    body { background: white; color: black; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Good Lored</h1>
+        <div class="subtitle">A fast, social lore-sharing game about truths, tall tales, and props.</div>
+      </div>
+      <div class="btnrow no-print">
+        <button onclick="window.print()">Print Rules</button>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p><span class="badge">Goal</span> Earn points by telling the most compelling story that fits the prompt. The Lore Lord (judge) picks the round's best story. If your story is made up you earn <strong>1 point</strong>; if it's a true story you earn <strong>2 points</strong>. You also gain <strong>+1 point per prop</strong> you successfully weave into the story.</p>
+    </div>
+
+    <div class="card">
+      <h2>Quick Start</h2>
+      <div class="callout">
+        <ol>
+          <li>Make a room and join eachother's games</li>
+          <li>Each player tells a story (true or made up), weaving in up to 3 props.</li>
+          <li>Lore Lord picks the best story → award points (1 made up, 2 true, +1 per prop).</li>
+          <li>Rotate Lore Lord, refresh props, repeat.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Round Structure</h2>
+      <ol>
+        <li><strong>Reveal Prompt</strong> — The Lore Lord draws a prompt card and reads it aloud (e.g., “Share a piece of dating lore about yourself”).</li>
+        <li><strong>Storytelling</strong> — In turn order, each player tells a story inspired by the prompt. Stories may be <em>true or made up</em>. Try to naturally include any of your <strong>prop cards</strong> (words/objects). You may use from 0 to 3 props.</li>
+        <li><strong>Questions (optional)</strong> — After a story, players may ask up to 1–2 brief clarifying questions.</li>
+        <li><strong>Judging</strong> — The Lore Lord picks the best story based on <em>fit to prompt, creativity, and delivery</em>. The chosen storyteller earns base points and any prop bonuses (see Scoring).</li>
+        <li><strong>Truth Reveal</strong> — The chosen storyteller states whether the story was true or made up (no proof required; table trust applies).</li>
+        <li><strong>Rotate</strong> — Discard used props, deal 3 new prop cards to each player, and pass the Lore Lord role to the next player.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Scoring</h2>
+      <table>
+        <thead>
+          <tr><th>Condition</th><th>Points</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Best story &amp; <em>made up</em></td><td>1</td></tr>
+          <tr><td>Best story &amp; <strong>true</strong></td><td>2</td></tr>
+          <tr><td>Each prop card woven in (0–3)</td><td>+1 each</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Only the Lore Lord’s chosen story scores for the round. Ties: the Lore Lord breaks ties; or award both and skip the next round’s judging to keep pace.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Judge Guidance</h2>
+        <ul>
+          <li>Reward stories that clearly match the prompt.</li>
+          <li>Favor truth when quality is close (the 2-point bonus encourages real sharing).</li>
+          <li>Props should feel integrated, not tacked on; obvious shoehorning may be ignored.</li>
+          <li>Keep the table moving — ~60–90 seconds per story.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>House Rules &amp; Variants</h2>
+        <ul>
+          <li><strong>Group Vote:</strong> Everyone votes; Lore Lord breaks ties.</li>
+          <li><strong>Detective Bonus:</strong> If the table unanimously misjudges truth/lie, award the storyteller +1 extra.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Sample Prompts</h2>
+      <ul>
+        <li>Share a piece of <strong>dating lore</strong> about yourself.</li>
+        <li>Tell a story about a time you <strong>got completely lost</strong>.</li>
+        <li>What’s your most <strong>unbelievable coincidence</strong>?</li>
+        <li>Describe a <strong>small decision</strong> that changed everything.</li>
+      </ul>
+      <h2 style="margin-top:16px;">Sample Prop Cards</h2>
+      <ul>
+        <li>rubber duck · rooftop · a talk</li>
+        <li>casserole · voicemail · green shoes</li>
+        <li>forklift · choir · 3 a.m.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <div class="right">Play kindly. Share generously. Good Lored.</div>
+    </footer>
+  </div>
+</body>
+</html>
