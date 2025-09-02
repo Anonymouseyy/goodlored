@@ -61,7 +61,7 @@ class PlayerHand extends HTMLElement {
 
     render(playerData) {
         const { name, isYou, isLoreLord, isStoryteller, propCards, revealedProps, storyStatus } = playerData;
-        this.playerNameEl.textContent = `${name}${isYou ? ' (You)' : ''}${isLoreLord ? ' (Lore Lord)' : ''}`;
+        this.playerNameEl.textContent = `${name}${isYou ? ' (You)' : ''}`;
 
         this.propCardsEl.innerHTML = '<strong>Prop Cards:</strong>';
         if (propCards) {
@@ -100,7 +100,7 @@ class PlayerHand extends HTMLElement {
         if (storyStatus) {
             const truthText = storyStatus.isTrue ? 'This story was TRUE' : 'This story was FAKE';
             const points = (storyStatus.isTrue ? 2 : 1) + Object.keys(revealedProps || {}).length;
-            this.storyStatusEl.textContent = `Story Status: ${truthText} (${points} points)`;
+            this.storyStatusEl.textContent = `Story Told`;
         } else {
             this.storyStatusEl.textContent = '';
         }
@@ -165,6 +165,8 @@ joinRoomBtn.addEventListener('click', () => {
         const conn = peer.connect(roomId);
         connections[roomId] = conn;
         setupConnectionHandlers(conn);
+        showLobby();
+        startGameBtn.style.display = 'none';
     }
 });
 
@@ -301,7 +303,7 @@ function renderPlayerHands() {
 
 function renderLoreLordControls() {
     loreLordControlsContainer.innerHTML = '';
-    if (myPeerId === gameState.loreLord && !gameState.roundInProgress && isHost) {
+    if (isHost && !gameState.roundInProgress) {
         const btn = document.createElement('button');
         btn.textContent = 'Start Next Round';
         btn.addEventListener('click', startNewRound);

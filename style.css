@@ -1,15 +1,16 @@
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 #app {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #1e1e1e;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
 #room-creation, #lobby {
@@ -19,12 +20,13 @@ body {
 .room-id-display {
     font-size: 1.5em;
     font-weight: bold;
-    color: #007bff;
+    color: #4da6ff;
     margin: 10px 0;
     padding: 10px;
-    border: 2px solid #007bff;
+    border: 2px solid #4da6ff;
     border-radius: 8px;
     display: inline-block;
+    background-color: #1a1a1a;
 }
 
 #lobby-player-list {
@@ -36,12 +38,15 @@ body {
 #lobby-player-list li {
     font-size: 1.2em;
     margin-bottom: 5px;
+    color: #f0f0f0;
 }
 
 input[type="text"] {
     padding: 10px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
     margin-right: 10px;
     font-size: 1em;
 }
@@ -54,13 +59,20 @@ button {
     color: #fff;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #3399ff;
 }
 
 button:disabled {
-    background-color: #ccc;
+    background-color: #555;
     cursor: not-allowed;
+    color: #aaa;
 }
 
 hr {
     margin: 20px 0;
+    border: 1px solid #333;
 }
