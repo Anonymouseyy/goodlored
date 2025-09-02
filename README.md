@@ -1,6 +1,6 @@
 # Good Lored
 
-**Good Lored** is a fun and creative storytelling game where players share personal or fictional stories, using props to make their tales more interesting. The goal is to weave engaging stories, bluff convincingly, and score points.
+**Good Lored** is a fun and creative storytelling game where players share personal or fictional stories, using props to make their tales more interesting. The goal is to weave engaging stories and score points. [Play Here](https://anonymouseyy.github.io/goodlored/)
 
 
 
